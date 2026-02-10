@@ -1,0 +1,8 @@
+put http://localhost:3000/personagens
+Content-Type: application/json
+
+{
+
+    "nome": "Summer Smith"
+
+}

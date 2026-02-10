@@ -33,6 +33,20 @@ app.post('/personagens', (req, res) => {
     lista.push(novoPersonagem)
     res.send('Personagem adicionado com sucesso')                                                        
 })
+
+app.put('/personagens/:id', (req, res) => {
+    const id = req.params.id
+    const nomeAtualizado = req.body.nome
+    lista[id-1] = nomeAtualizado
+    res.send('Personagem atualizado com sucesso')
+})
+
+app.delete('/personagens/:id', (req, res) => {
+    const id = req.params.id
+    lista.splice(id-1, 1)
+    res.send('Personagem deletado com sucesso')
+})
+
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000')
 })
