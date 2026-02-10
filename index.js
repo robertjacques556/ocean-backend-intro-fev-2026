@@ -26,6 +26,13 @@ app.get('/personagens/:id', (req, res) => {
   
 })
 
+ app.use(express.json())
+
+app.post('/personagens', (req, res) => {
+    const novoPersonagem = req.body.nome
+    lista.push(novoPersonagem)
+    res.send('Personagem adicionado com sucesso')                                                        
+})
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000')
 })
